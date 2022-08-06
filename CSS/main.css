@@ -1,0 +1,244 @@
+*,
+::before,
+::after
+{
+  box-sizing: border-box;
+}
+
+.container
+{
+	display: grid;
+  	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+  	background-color: #2396E3;
+  	width: 360px;
+	height: 740px;
+	position: absolute;
+}
+
+.btn_help
+{
+	grid-area: 5 / 3 / 6 / 4;
+	background-color: DarkBlue;
+	color: white
+}
+
+.btn_help:hover
+{
+	background-color: blue	
+}
+
+.infos
+{
+	grid-area: 1 / 1 / 4 / 5;
+	background-color: white;
+	display: none;
+	z-index: 2
+}
+
+.showInfos
+{
+	display: block
+}
+
+.nextPage
+{
+	grid-area: 5 / 4 / 6 / 5;
+}
+
+.nextPage:hover
+{
+	background-color: white;
+	border-radius: 50%
+}
+
+.square-lg
+{
+	margin: 5px;
+	border: 1px solid brown;
+	opacity: 100%;
+	border-radius: 6px;
+	padding: 10px;
+}
+
+.square-sm
+{
+	margin: 10px;
+	border-radius: 6px;
+	padding: 1px;
+	text-align: center;
+}
+
+.square-sm:hover
+{
+	border-width: 0 3px 3px 0;
+	border-color: white
+}
+
+
+/*.square:hover::after
+{
+	content: "";
+	width: 15px;
+	height: 15px;
+	background-color: pink;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	transform: rotate(-45deg);
+	border: 1px solid orange;
+	border-radius: 25%;
+	z-index: 2
+}
+*/
+.square-lg:hover::after
+{
+	content:"";
+	border: solid antiquewhite;
+  	border-width: 0 6px 6px 0;
+	border-bottom-right-radius: 50%;
+	border-top-left-radius: 25%;
+	height: 45px;
+	width: 45px;
+  	display: inline-block;
+	position: relative;
+	top: 30%;
+	left: 60%;
+  	padding: 3px;
+	box-shadow: 0px 5px 6px rgba(0,0,0,.4);
+	cursor: pointer;
+}
+
+.square-lg-one, .square-sm-one
+{
+	background-color: orange;
+}
+
+.square-lg-one
+{
+	grid-area: 1 / 1 / 2 / 3; 
+}
+
+.square-sm-one
+{
+	grid-area: 4 / 1 / 5 / 2 ;
+	border: 1px solid red;
+}
+
+
+.square-lg-two, .square-sm-two
+{
+	background-color: lightblue;
+}
+
+.square-lg-two
+{
+	grid-area: 1 / 3 / 2 / 5
+}
+
+.square-sm-two
+{
+	grid-area: 4 / 2 / 5 / 3;
+	border: 1px solid red;
+}
+
+
+.square-lg-three, .square-sm-three
+{
+	background-color: green;
+}
+
+.square-lg-three
+{
+	grid-area: 2 / 1 / 3 / 3
+}
+
+.square-sm-three
+{
+	grid-area: 4 / 3 / 5 / 4;
+	border: 1px solid red;
+}
+
+
+.square-lg-four, .square-sm-four
+{
+	background-color: red;
+}
+
+.square-lg-four
+{
+	grid-area: 2 / 3 / 3 / 5
+}
+
+.square-sm-four
+{
+	grid-area: 4 / 4 / 5 / 5;
+	border: 1px solid black;
+}
+
+
+.square-lg-five, .square-sm-five
+{
+	background-color: yellow;
+}
+
+.square-lg-five
+{
+	grid-area: 3 / 1 / 4 / 3
+}
+
+.square-sm-five
+{
+	grid-area: 5 / 1 / 6 / 2;
+	border: 1px solid black;
+}
+
+
+.square-lg-six, .square-sm-six
+{
+	background-color: rgb(210, 161, 140);
+}
+
+.square-lg-six
+{
+	grid-area: 3 / 3 / 4 / 5
+}
+
+.square-sm-six
+{
+	grid-area: 5 / 2 / 6 / 3;
+	border: 1px solid black;
+}
+
+.square-front
+{
+	border: 2px solid orange;
+	border-width: 0 3px 3px 0;
+	background: pink;
+	
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	border-bottom-left-radius: 50%;
+}
+
+.square-back
+{
+	border-left: 1px solid red;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	bottom: 15px;
+	left: 15px;
+	border-bottom-left-radius: 100%;
+	background: grey;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
